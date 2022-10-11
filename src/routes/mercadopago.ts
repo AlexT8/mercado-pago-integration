@@ -30,7 +30,8 @@ router.post('/', async (req:Request, res:Response) => {
                 // {id:'visa'},
             ],
             excluded_payment_types:[
-                {id:'ticket'}
+                {id:'ticket'},
+                // {id:"debit_card"}
             ],
             installments:1
         },
@@ -47,7 +48,6 @@ router.post('/', async (req:Request, res:Response) => {
     mercadopago.preferences
     .create(preference)
     .then(function (response) {
-        // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
         //init_point es el link a redirigir
         res.json(response.body)
     })
