@@ -20,7 +20,7 @@ router.post('/', async (req:Request, res:Response) => {
             quantity: 1,
         }],
         back_urls: {
-            "success": `https://nuestrositio.com/ejemplo=300`,
+            "success": `https://nuestrositio.com/pagado=830`,
             "failure": `https://nuestrositio.com/`,
             "pending":`https://nuestrositio.com/`
         },
@@ -40,7 +40,7 @@ router.post('/', async (req:Request, res:Response) => {
         // marketplace:"other_account_token",
         // marketplace_fee:total*0.1,
     };
-    
+
     // conectamos el SDK a nuestra App
     mercadopago.configure({access_token:TEST.token})
 
