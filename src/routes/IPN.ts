@@ -16,23 +16,25 @@ router.post('/', async (req:Request, res:Response)=>{
                 const payment = await mercadopago.payment.findById(id)
                 const {external_reference, status, payer, amount} = payment.body
 
+                const payment_obj = {
+                    external_reference, status, payer, amount
+                }
+
                 switch(status){
                     case "approved":
                         //Do some if payment was approved
-                        const paymentInfo = {
-                            payer,
-                            status,
-                            amount
-                        }
+                        console.log("Payment approved", payment_obj)
                         break;
                     default:
                         //Do some if payment was denied
+                        console.log("Payment denied", payment_obj)
                         break;
                 }
                 break;
             case "merchant_order":
                 const merchant = await mercadopago.merchant_orders.findById(id)
                 const external:string = merchant.body.external_reference
+                console.log("Merchant", external)
                 break;
             default:
                 break;
