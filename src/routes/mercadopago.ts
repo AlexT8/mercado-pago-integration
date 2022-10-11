@@ -22,7 +22,7 @@ router.post('/', async (req:Request, res:Response) => {
         back_urls: {
             "success": `https://nuestrositio.com/pagado=830`,
             "failure": `https://nuestrositio.com/`,
-            "pending":`https://nuestrositio.com/`
+            "pending": `https://nuestrositio.com/`
         },
         payment_methods: {
             excluded_payment_methods: [
